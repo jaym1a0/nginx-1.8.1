@@ -313,10 +313,12 @@ main(int argc, char *const *argv)
         return 1;
     }
 
+    //保存命令行参数到ngx_os_argv/ngx_argc/ngx_argv
     if (ngx_save_argv(&init_cycle, argc, argv) != NGX_OK) {
         return 1;
     }
 
+    //为cycle的conf_prefix/conf/conf_param赋值
     if (ngx_process_options(&init_cycle) != NGX_OK) {
         return 1;
     }
